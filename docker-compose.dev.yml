@@ -1,0 +1,13 @@
+services:
+  leicia:
+    container_name: leicia-dev
+    image: arville27/leicia-bot:dev
+    build: .
+    restart: always
+    entrypoint: ["npm", "run", "dev:poll"]
+    volumes:
+      - ./src:/app/src
+    environment:
+      - NODE_ENV=development
+      - DEVELOPMENT_GUILD_ID=${DEVELOPMENT_GUILD_ID}
+      - TOKEN=${TOKEN}

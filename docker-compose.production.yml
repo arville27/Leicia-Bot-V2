@@ -1,0 +1,8 @@
+services:
+  leicia:
+    container_name: leicia-production
+    image: arville27/leicia-bot:production
+    build: .
+    restart: always
+    environment:
+      - TOKEN=${TOKEN}

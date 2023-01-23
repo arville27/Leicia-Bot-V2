@@ -4,7 +4,10 @@ import commands from '@commands';
 import events from '@events';
 import LeiciaClient from '@core/LeiciaClient';
 
-const leiciaClient = new LeiciaClient({ intents: [GatewayIntentBits.Guilds] });
+const leiciaClient = new LeiciaClient({
+  options: { intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] },
+});
+
 leiciaClient.setCommands(commands);
 leiciaClient.registerEvents(events);
 

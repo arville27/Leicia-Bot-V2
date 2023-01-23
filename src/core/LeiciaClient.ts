@@ -9,12 +9,13 @@ export default class LeiciaClient extends Client {
   public commands: Collection<string, Command>;
   public context: Context;
 
-  constructor(options: ClientOptions) {
+  constructor({ options }: { options: ClientOptions }) {
     super(options);
     this.commands = new Collection();
     this.context = {
       client: this,
       logger: logger,
+      musicSubscriptions: new Collection(),
     } satisfies Context;
   }
 
